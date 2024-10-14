@@ -18,4 +18,14 @@ model Account {
   role        String
   crdate      DateTime @default(now())
   update      DateTime @default(now())
+  News  News[]
+}
+
+model News {
+  id           Int      @id @default(autoincrement())
+  title        String
+  content      String
+  createdAt    DateTime @default(now())
+  authorId     Int
+  author       Account  @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
