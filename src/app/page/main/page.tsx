@@ -1,5 +1,7 @@
 "use client"
 import News from "@/app/component/main/news/page";
+import TaskComponent from "@/app/component/task/engine/page";
+import TaskEngine from "@/app/component/task/engine/page";
 import { useEffect, useState } from "react";
 
 const MainPage = () => {
@@ -44,6 +46,7 @@ const MainPage = () => {
                     <ul>
                         <li>Новости</li><News account={ account }></News>
                         <li className="active">Мои задания</li>
+                        <TaskComponent account={ account }/>
                         <li>Мои достижения</li>
                         <li>®</li>
                     </ul>
